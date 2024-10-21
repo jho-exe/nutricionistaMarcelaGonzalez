@@ -51,7 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const question = item.querySelector('.faq-question');
     const answer = item.querySelector('.faq-answer');
 
-    question.addEventListener('click', () => {
+    question.addEventListener('click', function(event) {
+      event.preventDefault(); // Evitar cualquier comportamiento por defecto
+
       const isOpen = answer.classList.contains('show');
 
       // Cerrar solo las respuestas que están abiertas
