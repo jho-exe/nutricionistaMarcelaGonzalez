@@ -1,0 +1,22 @@
+{
+  "name": "landingmarcela",
+  "version": "1.0.0",
+  "main": "index.js",
+ "scripts": {
+    "build:css": "npx tailwindcss -i ./src/css/styles.css -o ./public/css/styles.css --minify",
+    "watch:css": "npx tailwindcss -i ./src/css/styles.css -o ./public/css/styles.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14"
+  },
+  "devDependencies": {
+    "cssnano": "^7.0.6",
+    "terser": "^5.36.0"
+  },
+  "description": ""
+}

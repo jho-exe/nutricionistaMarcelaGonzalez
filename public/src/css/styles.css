@@ -1,0 +1,316 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos personalizados */
+
+/* Elimina los márgenes y paddings globales en html y body */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Si usas algún contenedor adicional en la parte superior, asegúrate de que no tenga márgenes o padding */
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+/* Si el primer elemento tiene margen superior, asegúrate de restablecerlo */
+section#inicio {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Elimina cualquier margen superior en el primer hijo */
+body > *:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+a {
+  transition: background-color 0.3s ease, color 0.3s ease; /* Añade transición de color también */
+}
+
+button {
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Añade transición de transformación */
+}
+
+button:hover {
+  transform: scale(1.05); /* Añade un pequeño efecto de hover a los botones */
+}
+
+/* Animaciones de fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform; /* Optimización de las animaciones */
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estilo de la barra de navegación */
+nav {
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+  backdrop-filter: blur(10px); /* Difuminar el fondo detrás de la navbar */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición para el cambio de fondo y sombra */
+}
+
+/* Cambios en el color de los links cuando se hace hover */
+nav a {
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #38a169; /* Cambia el color del texto al hacer hover */
+}
+
+/* Estilos para la sección FAQ */
+.faq-item {
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease;
+}
+
+.faq-answer.show {
+  max-height: 500px; /* Ajusta según el contenido máximo esperado */
+  opacity: 1;
+  padding: 16px;
+}
+
+.material-icons {
+  transition: transform 0.3s ease;
+}
+
+.faq-answer.show + .faq-question .material-icons {
+  transform: rotate(180deg);
+}
+
+
+/* Estilo del Hero Section */
+section#inicio {
+  background: linear-gradient(to right, #c6f6d5, #ffffff, #ebf4ff); /* Fondo degradado */
+}
+
+/* Estilo de los testimonios */
+.testimonial-item {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.testimonial-item:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Sombra más intensa */
+  transform: translateY(-5px); /* Efecto de levantamiento */
+}
+
+/* Estilo para el botón de llamada a la acción */
+.call-to-action {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.call-to-action:hover {
+  background-color: #38a169; /* Cambia el color al hacer hover */
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+/* Footer */
+footer {
+  background-color: #2d3748; /* Fondo oscuro */
+  color: white;
+  text-align: center;
+}
+
+footer a {
+  color: #38a169; /* Verde del enlace */
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #68d391; /* Verde más claro al hacer hover */
+}
+
+/* Estilo para las entradas del formulario */
+input, textarea {
+  border-radius: 0.375rem;
+  border: 1px solid #cbd5e0;
+  padding: 0.75rem;
+  width: 100%;
+  background-color: white;
+  color: #2d3748;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #38a169;
+  box-shadow: 0 0 0 2px rgba(56, 161, 105, 0.3);
+}
+
+/* Estilo del botón de envío del formulario */
+button[type="submit"] {
+  background-color: white;
+  color: #38a169;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #f7fafc; /* Cambia el color al hacer hover */
+  transform: scale(1.05); /* Efecto de crecimiento al hacer hover */
+}
+
+/* Botón para ir al inicio */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100; /* Asegura que esté sobre otros elementos */
+  display: none; /* Inicialmente oculto */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top.show {
+  display: block; /* Muestra el botón cuando sea necesario */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  background-color: #38a169; /* Cambia el color al hacer hover */
+  transform: scale(1.1); /* Pequeño efecto de aumento al hacer hover */
+}
+
+/* Ajuste de imágenes en las secciones */
+img {
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra ligera */
+}
+
+/* Estilo de la sección de consejos (más grande) */
+#consejos {
+  overflow: hidden;
+  position: relative;
+  padding: 4rem 0; /* Incrementa el padding para hacer la sección más alta */
+  height: 50vh; /* Ocupará toda la altura de la ventana para mayor impacto visual */
+}
+
+/* Contenedor del carrusel */
+#consejos-slider {
+  display: flex;
+  gap: 3rem; /* Espaciado mayor entre los elementos */
+  transition: transform 0.3s ease-in-out;
+  height: 100%; /* El contenedor de los consejos ocupará toda la sección */
+  align-items: center; /* Alinea verticalmente los elementos del carrusel */
+}
+
+/* Estilo del ícono en los consejos */
+.icono-consejo {
+  font-size: 3rem; /* Tamaño del ícono */
+  color: #38a169; /* Color verde */
+  margin-bottom: 1rem; /* Espacio entre el ícono y el título */
+  display: block; /* Para que cada ícono esté en su propia línea */
+}
+
+/* Consejo individual con ícono (el resto del estilo sigue igual) */
+.consejo-item {
+  min-width: 350px;
+  max-width: 450px;
+  padding: 3rem;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 0 0 auto;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.consejo-item h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2f855a;
+  margin-bottom: 1.5rem;
+}
+
+.consejo-item p {
+  font-size: 1.25rem;
+  color: #4a5568;
+  line-height: 1.8;
+}
+
+/* Efecto hover en los consejos */
+.consejo-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Flechas de navegación opcionales */
+.consejos-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem; /* Flechas más grandes para que coincidan con el tamaño de la sección */
+  color: #38a169;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.consejos-prev {
+  left: 2rem;
+}
+
+.consejos-next {
+  right: 2rem;
+}
+
+.consejos-nav:hover {
+  color: #2f855a;
+}
+
+/* Ajuste de columnas para pantallas grandes */
+@media (min-width: 768px) {
+  #sobre-mi .grid-cols-2, #contacto .grid-cols-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  #consejos-slider {
+    gap: 1rem;
+  }
+  
+  .consejo-item {
+    min-width: 400px;
+  }
+}
+
+/* Puntos de paginación (si son necesarios) */
+.slick-dots li button:before {
+  color: #38a169; /* Verde para los puntos */
+}
