@@ -229,23 +229,40 @@ img {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra ligera */
 }
 
-/* Estilo de la sección de consejos (más grande) */
+/* Ajuste general del contenedor de consejos */
 #consejos {
   overflow: hidden;
-  position: relative;
-  padding: 4rem 0; /* Incrementa el padding para hacer la sección más alta */
-  height: auto; /* Ocupará toda la altura de la ventana para mayor impacto visual */
+  padding: 2rem 0; /* Disminuir el padding para móviles */
+  height: auto; /* Permitir que la altura se ajuste al contenido */
 }
 
-/* Contenedor del carrusel */
+/* Ajuste del contenedor del slider */
 #consejos-slider {
   display: flex;
-  gap: 3rem; /* Espaciado mayor entre los elementos */
-  overflow-x: auto; /* Permitir desplazamiento horizontal en pantallas pequeñas */
+  gap: 1.5rem; /* Espaciado menor para móviles */
+  overflow-x: auto; /* Desplazamiento horizontal en pantallas pequeñas */
   scroll-behavior: smooth;
-  height: auto; /* Deja que crezca automáticamente */
-  align-items: center;
+  padding: 0 1rem; /* Añade algo de padding para evitar que los ítems se corten */
 }
+
+/* Ítems de los consejos */
+.consejo-item {
+  min-width: 280px; /* Reduce el ancho mínimo en móviles */
+  max-width: 300px; /* Ajusta el ancho máximo para evitar corte en pantallas pequeñas */
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  flex: 0 0 auto;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Efecto hover en los consejos */
+.consejo-item:hover {
+  transform: scale(1.05); /* Aumenta el efecto al pasar el mouse */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
 
 /* Estilo del ícono en los consejos */
 .icono-consejo {
@@ -253,61 +270,6 @@ img {
   color: #38a169; /* Color verde */
   margin-bottom: 1rem; /* Espacio entre el ícono y el título */
   display: block; /* Para que cada ícono esté en su propia línea */
-}
-
-/* Consejo individual con ícono (el resto del estilo sigue igual) */
-.consejo-item {
-  min-width: 350px;
-  max-width: 450px;
-  padding: 3rem;
-  background-color: #fff;
-  border-radius: 20px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  flex: 0 0 auto;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.consejo-item h3 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #2f855a;
-  margin-bottom: 1.5rem;
-}
-
-.consejo-item p {
-  font-size: 1.25rem;
-  color: #4a5568;
-  line-height: 1.8;
-}
-
-/* Efecto hover en los consejos */
-.consejo-item:hover {
-  transform: scale(1.1);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-/* Flechas de navegación opcionales */
-.consejos-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 3rem; /* Flechas más grandes para que coincidan con el tamaño de la sección */
-  color: #38a169;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.consejos-prev {
-  left: 2rem;
-}
-
-.consejos-next {
-  right: 2rem;
-}
-
-.consejos-nav:hover {
-  color: #2f855a;
 }
 
 /* Ajuste de columnas para pantallas grandes */
@@ -319,13 +281,13 @@ img {
   }
 
   #consejos-slider {
-    flex-direction: column; /* Cambiar a columna en lugar de fila */
-    gap: 2rem; /* Disminuir el espaciado entre elementos */
+    gap: 2rem; /* Mayor espacio entre los ítems en pantallas grandes */
+    padding: 0 2rem;
   }
 
   .consejo-item {
-    min-width: 100%; /* Asegurarse de que los ítems ocupen el ancho completo */
-    max-width: 100%; /* Asegurarse de que no se corten */
+    min-width: 300px;
+    max-width: 350px; /* Los ítems serán un poco más grandes en pantallas grandes */
   }
 
   /* Menú móvil desplegable (posición fija) */
