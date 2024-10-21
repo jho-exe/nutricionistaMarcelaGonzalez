@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <base href="/nutricionistaMarcelaGonzalez/"> 
+    <base href="/nutricionistaMarcelaGonzalez/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Consulta nutricional personalizada con Marcela González. Mejora tu bienestar con planes nutricionales diseñados para ti.">
     <meta name="keywords" content="nutrición, dietas, bienestar, nutricionista, salud, alimentación">
@@ -18,31 +18,55 @@
   
 <!-- Navbar -->
 <nav class="bg-white bg-opacity-90 fixed w-full z-50 shadow-lg transition duration-500 ease-in-out" id="navbar">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="flex justify-between items-center py-4">
-        <!-- Logo -->
-        <div class="text-green-700 font-extrabold text-2xl">
-          <a href="#">Marcela González</a>
-        </div>
-        <!-- Links -->
-        <div>
-          <ul class="flex space-x-6 font-semibold text-gray-700">
-            <li><a href="#inicio" class="hover:text-green-600 transition">Inicio</a></li>
-            <li><a href="#sobre-mi" class="hover:text-green-600 transition">Sobre mí</a></li>
-            <li><a href="#servicios" class="hover:text-green-600 transition">Servicios</a></li>
-            <li><a href="#testimonios" class="hover:text-green-600 transition">Testimonios</a></li>
-            <li><a href="#contacto" class="hover:text-green-600 transition">Contacto</a></li>
-          </ul>
-        </div>
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center py-4">
+      <!-- Logo -->
+      <div class="text-green-700 font-extrabold text-2xl">
+        <a href="#">Marcela González</a>
+      </div>
+
+      <!-- Botón hamburguesa (Mobile View) -->
+      <div class="md:hidden">
+        <button id="nav-toggle" class="text-green-600 focus:outline-none transition duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Links (Desktop View) -->
+      <div class="hidden md:flex space-x-6 font-semibold text-gray-700" id="nav-content">
+        <ul class="flex space-x-6">
+          <li><a href="#inicio" class="hover:text-green-600 transition">Inicio</a></li>
+          <li><a href="#sobre-mi" class="hover:text-green-600 transition">Sobre mí</a></li>
+          <li><a href="#servicios" class="hover:text-green-600 transition">Servicios</a></li>
+          <li><a href="#testimonios" class="hover:text-green-600 transition">Testimonios</a></li>
+          <li><a href="#faq" class="hover:text-green-600 transition">FAQ</a></li>
+          <li><a href="#consejos" class="hover:text-green-600 transition">Consejos</a></li>
+          <li><a href="#contacto" class="hover:text-green-600 transition">Contacto</a></li>
+        </ul>
       </div>
     </div>
-  </nav>
-  
+
+    <!-- Menú colapsado para móviles (Mobile View) -->
+    <div class="hidden flex-col space-y-4 md:hidden bg-white shadow-lg px-4 py-4" id="nav-mobile">
+      <a href="#inicio" class="block text-center text-gray-700 hover:text-green-600 transition">Inicio</a>
+      <a href="#sobre-mi" class="block text-center text-gray-700 hover:text-green-600 transition">Sobre mí</a>
+      <a href="#servicios" class="block text-center text-gray-700 hover:text-green-600 transition">Servicios</a>
+      <a href="#testimonios" class="block text-center text-gray-700 hover:text-green-600 transition">Testimonios</a>
+      <a href="#faq" class="block text-center text-gray-700 hover:text-green-600 transition">FAQ</a>
+      <a href="#consejos" class="block text-center text-gray-700 hover:text-green-600 transition">Consejos</a>
+      <a href="#contacto" class="block text-center text-gray-700 hover:text-green-600 transition">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+
   <!-- Hero Section -->
   <section id="inicio" class="relative h-screen flex flex-col justify-center items-center bg-gradient-to-r from-green-200 via-white to-green-100 mt-16 fade-in">
     <div class="absolute inset-0 bg-cover bg-center opacity-50 transition duration-500 hover:opacity-100 hover:scale-105 transform" style="background-image: url('./public/assets/healthy-food.webp');"></div>
     <div class="relative z-10 text-center p-8 max-w-xl bg-white bg-opacity-95 rounded-2xl shadow-2xl backdrop-blur-sm">
-      <h1 class="text-5xl md:text-6xl font-extrabold text-green-800 mb-6 drop-shadow-md fade-in">Nutrición Personalizada</h1>
+      <h1 class="text-5xl md:text-6xl font-extrabold text-green-800 mb-6 drop-shadow-md fade-in">Nutrición Personalizadaaa</h1>
       <p class="text-lg md:text-xl mb-8 leading-relaxed text-gray-700 fade-in">Transforma tu vida con planes nutricionales adaptados a tus necesidades y objetivos.</p>
       <p class="text-md md:text-lg mb-8 leading-relaxed text-gray-500 fade-in">Alcanza el bienestar y la energía que siempre has deseado.</p>
       <a href="#contacto" class="inline-block bg-green-600 text-white px-8 py-4 rounded-full shadow-lg hover:bg-green-500 transition duration-300 transform hover:scale-105 font-semibold">Reserva tu consulta</a>

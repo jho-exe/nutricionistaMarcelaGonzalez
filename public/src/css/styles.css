@@ -10,7 +10,7 @@ html, body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Desplazamiento suave */
 }
 
 /* Si usas algún contenedor adicional en la parte superior, asegúrate de que no tenga márgenes o padding */
@@ -34,6 +34,10 @@ body > *:first-child {
 h1, h2, h3 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
+}
+
+section {
+  scroll-margin-top: 80px; /* Ajusta el valor según la altura del navbar */
 }
 
 a {
@@ -61,21 +65,35 @@ button:hover {
   transform: translateY(0);
 }
 
-/* Estilo de la barra de navegación */
+/* Estilo del Navbar */
 nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
   background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
-  backdrop-filter: blur(10px); /* Difuminar el fondo detrás de la navbar */
+  backdrop-filter: blur(10px); /* Difuminar el fondo detrás del navbar */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
   transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición para el cambio de fondo y sombra */
+  padding: 1rem 0;
+  height: 80px; /* Asegura una altura constante del navbar */
 }
 
-/* Cambios en el color de los links cuando se hace hover */
+/* Ajuste del espacio para que no se solape con la barra de navegación */
+#inicio {
+  margin-top: 80px; /* Ajustar según la altura del navbar */
+}
+
+/* Estilo de los links */
 nav a {
+  color: #2d3748;
+  font-weight: 600;
   transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #38a169; /* Cambia el color del texto al hacer hover */
+  color: #38a169; /* Cambia el color al pasar sobre el enlace */
 }
 
 /* Estilos para la sección FAQ */
@@ -94,7 +112,7 @@ nav a:hover {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.3s ease, opacity 0.3s ease; /* Añadido para transiciones suaves */
 }
 
 .faq-answer.show {
@@ -110,7 +128,6 @@ nav a:hover {
 .faq-answer.show + .faq-question .material-icons {
   transform: rotate(180deg);
 }
-
 
 /* Estilo del Hero Section */
 section#inicio {
@@ -269,7 +286,6 @@ img {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-
 /* Flechas de navegación opcionales */
 .consejos-nav {
   position: absolute;
@@ -308,6 +324,41 @@ img {
   .consejo-item {
     min-width: 400px;
   }
+
+  /* Menú móvil desplegable (posición fija) */
+  #nav-mobile {
+    position: fixed;
+    top: 80px; /* Justo debajo del navbar */
+    left: 0;
+    right: 0;
+    background-color: white;
+    overflow: hidden;
+    max-height: 0; /* Comienza oculto */
+    transition: max-height 0.3s ease-in-out; /* Animación suave */
+    z-index: 40; /* Asegúrate de que esté por encima del contenido */
+  }
+
+  /* Mostrar el menú móvil cuando esté desplegado */
+  #nav-mobile.show {
+    max-height: 500px; /* Ajusta la altura máxima */
+    border-bottom: 2px solid #e2e8f0; /* Añade una pequeña línea divisoria para el menú */
+  }
+
+  /* Estilo para los enlaces en el menú móvil */
+  #nav-mobile a {
+    display: block;
+    font-size: 18px;
+    padding: 12px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  #nav-mobile a:hover {
+    background-color: #38a169;
+    color: #ffffff;
+  }
+
 }
 
 /* Puntos de paginación (si son necesarios) */
