@@ -234,16 +234,17 @@ img {
   overflow: hidden;
   position: relative;
   padding: 4rem 0; /* Incrementa el padding para hacer la sección más alta */
-  height: 90vh; /* Ocupará toda la altura de la ventana para mayor impacto visual */
+  height: auto; /* Ocupará toda la altura de la ventana para mayor impacto visual */
 }
 
 /* Contenedor del carrusel */
 #consejos-slider {
   display: flex;
   gap: 3rem; /* Espaciado mayor entre los elementos */
-  transition: transform 0.3s ease-in-out;
-  height: 100%; /* El contenedor de los consejos ocupará toda la sección */
-  align-items: center; /* Alinea verticalmente los elementos del carrusel */
+  overflow-x: auto; /* Permitir desplazamiento horizontal en pantallas pequeñas */
+  scroll-behavior: smooth;
+  height: auto; /* Deja que crezca automáticamente */
+  align-items: center;
 }
 
 /* Estilo del ícono en los consejos */
@@ -318,11 +319,13 @@ img {
   }
 
   #consejos-slider {
-    gap: 1rem;
+    flex-direction: column; /* Cambiar a columna en lugar de fila */
+    gap: 2rem; /* Disminuir el espaciado entre elementos */
   }
-  
+
   .consejo-item {
-    min-width: 400px;
+    min-width: 100%; /* Asegurarse de que los ítems ocupen el ancho completo */
+    max-width: 100%; /* Asegurarse de que no se corten */
   }
 
   /* Menú móvil desplegable (posición fija) */
@@ -359,6 +362,7 @@ img {
     color: #ffffff;
   }
 
+  
 }
 
 /* Puntos de paginación (si son necesarios) */
