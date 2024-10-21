@@ -234,7 +234,7 @@ img {
   overflow: hidden;
   position: relative;
   padding: 4rem 0; /* Incrementa el padding para hacer la sección más alta */
-  height: 70vh; /* Ocupará toda la altura de la ventana para mayor impacto visual */
+  height: 90vh; /* Ocupará toda la altura de la ventana para mayor impacto visual */
 }
 
 /* Contenedor del carrusel */
