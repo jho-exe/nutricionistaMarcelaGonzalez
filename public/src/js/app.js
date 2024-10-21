@@ -1,22 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Obtener todos los enlaces del navbar que apuntan a secciones
-  const navbarLinks = document.querySelectorAll('nav a[href^="#"]');
+  // Obtener todos los enlaces que apuntan a secciones, no solo los del navbar
+  const links = document.querySelectorAll('a[href^="#"]');
   const navbarHeight = document.getElementById('navbar').offsetHeight; // Altura del navbar
 
-  navbarLinks.forEach(link => {
+  // Asignar comportamiento de desplazamiento suave a todos los enlaces
+  links.forEach(link => {
     link.addEventListener('click', function(event) {
       event.preventDefault();
       
       const targetId = this.getAttribute('href').substring(1);
       const targetSection = document.getElementById(targetId);
       
-      // Desplazamiento manual ajustado según la altura del navbar
-      const offsetTop = targetSection.offsetTop - navbarHeight;
+      if (targetSection) {
+        // Desplazamiento manual ajustado según la altura del navbar
+        const offsetTop = targetSection.offsetTop - navbarHeight;
 
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      }
     });
   });
 
